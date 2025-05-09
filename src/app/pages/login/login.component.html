@@ -1,17 +1,28 @@
+<!-- Contenedor con estilo de tarjeta de Angular Material -->
 <mat-card>
-    <h2>Iniciar Sesión</h2>
-    <form (ngSubmit)="onSubmit()">
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Usuario</mat-label>
-        <input matInput [(ngModel)]="username" name="username" required>
-      </mat-form-field>
-  
-      <mat-form-field appearance="fill" class="full-width">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="password" [(ngModel)]="password" name="password" required>
-      </mat-form-field>
-  
-      <button mat-raised-button color="primary" type="submit">Ingresar</button>
-    </form>
-  </mat-card>
-  
+  <h2>Iniciar Sesión</h2>
+
+  <!-- Formulario que llama al método onSubmit() cuando se envía -->
+  <form (ngSubmit)="onSubmit()">
+    <!-- Campo de entrada para el nombre de usuario.
+     Se vincula con la variable username del componente (two-way binding). -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Usuario</mat-label>
+      <input matInput [(ngModel)]="username" name="username" required />
+    </mat-form-field>
+    <!-- Campo de entrada para la contraseña, también con two-way binding.
+     El tipo "password" oculta los caracteres. -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+    </mat-form-field>
+    <!-- Botón de tipo submit. Al hacer clic se envía el formulario -->
+    <button mat-raised-button color="primary" type="submit">Ingresar</button>
+  </form>
+</mat-card>

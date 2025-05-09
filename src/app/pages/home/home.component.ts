@@ -5,11 +5,10 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule, MatCardModule,
-    MatButtonModule],
+  //El componente usa Angular Material (MatCard y MatButton) y el módulo de rutas (RouterModule).
+  // Esto permite que en el HTML se usen componentes como <mat-card>, <button mat-button> y directivas de enrutamiento.
+  imports: [RouterModule, MatCardModule, MatButtonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
-export class HomeComponent {
-
-}
+export class HomeComponent {}

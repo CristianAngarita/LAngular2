@@ -20,18 +20,20 @@ import { AuthService } from '../../services/auth.service';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  //Variables
   username = '';
   password = '';
-
+  // Inyecta el servicio de autenticación y el router para redirecciones
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {
     this.authService.login(this.username, this.password).subscribe({
       next: (response) => {
-        localStorage.setItem('token', response.token); // Guardas el token
-        this.router.navigate(['/dashboard']); // Rediriges a dashboard
+        localStorage.setItem('token', response.token); // Guarda el token JWT recibido en localStorage
+        this.router.navigate(['/dashboard']); // Redirige al dashboard
       },
       error: (err) => {
+        //Manejo de errores.
         console.error('Login error', err);
         alert('Error en el login');
       },
